@@ -1,0 +1,37 @@
+.news{
+	padding-top:100px ;
+	margin-bottom: 50px;
+	clear: both;
+}
+.clearfix:{
+	content: "";
+	height: 0px;
+	visibility: hidden;
+	display: block;
+	clear: both;
+}
+.news_con{
+	float: left;
+	width: 650px;
+	background: white;
+}
+.news_tit{
+	background: #1f1b18;
+	height: 60px;
+}
+.news_back{
+	float: right;
+	background: url(/image/fanhui.png) no-repeat left;
+	height: 32px;
+	display: block;
+	padding-left:30px;
+	margin: 12px 15px 0px 0px;
+	line-height: 32px;
+	color: white;
+	font-size: 16px;
+}
+.news_tit h2 {
+    padding: 20px 0 0 17px;
+    color: #fff;
+    font-size: 16px;
+}

@@ -1,0 +1,172 @@
+
+a{color:#666;}
+a:hover{color:#000;}
+/*会员中心*/
+.memberbox a:hover{ text-decoration:none;}
+.memberbox{border-top:1px solid #e4e4e4; background:url(e4line.gif) 200px 0 repeat-y; min-height:400px;padding-bottom:20px; font-size:14px;}
+.memberleft{ float:left; width:180px; overflow:hidden;}
+
+.memberright{ float:right;width:760px;}
+
+/*.memberleft .top{height:60px; border-bottom:1px solid #e4e4e4; background:url(membertop.png) left center no-repeat;}*/
+.memberleft .top{height:100px; border-bottom:1px solid #e4e4e4; padding:10px;overflow:hidden;}
+.mbleftnav{ width:180px; margin:auto;padding:10px 20px 0 20px;;}
+
+.memberleft .top .myqqimg{width:100px;float:left; text-align:center}
+.memberleft .top .myqqimg a{ font-size:12px;}
+.memberleft .top .myqqimg img{width:100px;height:100px;}
+.memberleft .top .jbandname{ float:right; width:110px;}
+.memberleft .top .myqq{font-size:14px; line-height:30px;}
+.memberleft .top .jibie{padding-top:10px;}
+
+.mbleftnav .hover{color:#000; font-weight:bold}
+.mbleftnav .cur{color:#000; background:url(lib.gif) left center no-repeat;}
+.mbleftnav .cur a{ display:block;}
+.mbleftnav dt{ height:34px; padding-left:20px; line-height:34px; border-bottom:1px solid #e4e4e4;   font-size:15px;margin-top:5px;margin-bottom:5px;color:#666; font-weight:bold; font-size:15px}
+.mbleftnav dd{padding-left:20px; line-height:26px;}
+.mbleftnav dd a{ font-size:13px}
+.mbleftnav .dta{background:url(lib.gif) left center no-repeat;}
+.mbleftnav .dtb{background:url(lib.gif) left center no-repeat;}
+.memberright .top{height:30px;padding-top:30px; border-bottom:1px solid #e4e4e4; font-size:20px; text-indent:20px;}
+.memberright .mrbox{width:760px; margin:auto;}
+.memberright .mrbox .jbqk{padding:20px;}
+
+.memberright .mrbox .jbqk .text{width:620px;  float:left;}
+.memberright .mrbox .jbqk .myqq{font-size:16px; line-height:40px; text-align:center}
+
+.intjbox{padding-bottom:20px;}
+.intjbox .mytitle{font-size:16px; line-height:30px; text-indent:10px; font-weight:bold;height:30px;}
+.textl120{width:120px; text-align:right;}
+.mytb{ color:#333}
+.rad{margin-right:10px;}
+
+.fontaaa{ font-family:Arial, Helvetica, sans-serif; color:#333; width:150px;height:24px; line-height:24px; font-size:14px;}
+.fontbbb{ font-family:"Microsoft YaHei",\5fae\8f6f\96c5\9ed1,arial,\5b8b\4f53; color:#333;width:300px;height:24px; line-height:24px;font-size:14px;}
+
+.mytb .a{padding-left:10px; cursor:pointer;}
+.mytb .a b{ color:#03C; font-weight:normal;}
+.savebtn{width:90px; height:36px; background:#0e7a00; color:#FFF; font-size:14px;border:none;margin-right:10px; cursor:pointer;}
+.smtext{color:#999;}
+.smtext p{ line-height:20px; font-size:12px;padding:0 20px;}
+.wrap{width:960px; margin:auto;}
+.regbox{color:#666;}
+.regbox a{color:#36F}
+.regbox a:hover{color:#c10208}
+.regbox .img{ width:600px; float:left;}
+.regbox .img img{ width:600px;}
+.regbox .reg{ width:330px; float:right;box-shadow: 3px 3px 3px #ccc; height:408px; border:1px solid #ddd; overflow:hidden;}
+.regbox .reg .regxb{padding:25px;}
+.regbox .reg .regxb .p{padding:15px 0; position:relative;height:40px;}
+.regbox .reg .regxb .p3{padding:15px 0; font-size:14px;border-top:1px dotted #ddd;margin-top:20px;}
+.regbox .reg .regxb .titletxt{ font-size:18px; font-family:"Microsoft YaHei",\5fae\8f6f\96c5\9ed1,arial,\5b8b\4f53; font-weight:bold; height:40px; line-height:40px; color:#666; display:block; }
+.regbox .reg .input{width:208px;  border:1px solid #ddd; font-size:14px;padding-left:70px; color:#666;padding-top:10px; padding-bottom:10px; background:none;position:relative; z-index:1;}
+.regbox .reg .regxb .useript{ background:url(ico-username.png) 20px center no-repeat;}
+.regbox .reg .regxb .passipt{ background:url(ico-mm.png) 20px center no-repeat;}
+.regbox .reg .regxb .lab{  position:absolute; height:40px; z-index:10; line-height:40px; top:15px; left:70px; font-size:14px;color:#999; cursor:text}
+.regbox .reg .regxb .tjbtn{ display:block; height:34px; background:#C30; text-align:center; font-size:14px; color:#fff;border:none; width:100%; font-weight:bold; cursor:pointer;}
+.regbox .reg .regxb .tjbtn2{ display:block; height:34px; background:#36F; text-align:center; font-size:14px; color:#fff;border:none; width:100%; font-weight:bold; cursor:pointer;}
+.f-l{ float:left;}
+.f-r{ float:right;}
+.txt-r{ text-align:right;}
+.txt-c{ text-align:center;}
+
+
+.findbox{padding:30px 0;color:#666;border:1px solid #ddd;margin-top:40px;}
+.find-stepbox{width:780px; margin:auto;}
+.find-stepbox .step{height:80px;}
+.find-stepbox .step .stepleft{ width:126px; height:42px; background:url(findpassword.png) no-repeat; float:left;}
+.find-stepbox .step .stepleft-c{ width:126px; height:42px; background:url(reg.png) no-repeat; float:left;}
+.find-stepbox .step .stepleft-w{ width:126px; height:42px; background:url(wd_reg.png) no-repeat; float:left;}
+.find-stepbox .c_regbox{width:560px;border-right:1px solid #ddd;padding-bottom:20px; float:left;}
+.find-stepbox .okregbox{ float:left; width:180px; margin-left:20px; line-height:60px; font-size:14px;}
+.find-stepbox .okregbox a{ font-weight:bold;color:#06F;}
+.find-stepbox .okregbox a:hover{ font-weight:bold;color:#f00;}
+.find-stepbox .step .step1{ background:url(step1.png) left bottom no-repeat; height:49px; float:left; width:654px;}
+.find-stepbox .step .step2{ background:url(step2.png) left bottom no-repeat; height:49px; float:left; width:654px;}
+.find-stepbox .step .step3{ background:url(step3.png) left bottom no-repeat; height:49px; float:left; width:654px;}
+.find-stepbox .step .step0{ height:33px; float:left; width:654px;border-bottom:1px solid #ddd;}
+.stepnr .p{ height:30px; overflow:hidden; line-height:30px; font-size:14px;padding:10px 0; position:relative;}
+.stepnr .pp{ height:30px; overflow:hidden; line-height:30px; font-size:14px;padding:10px 0; position:relative;}
+.stepnr .p03{ height:30px; overflow:hidden; line-height:30px; font-size:14px;padding:5px 0; position:relative;}
+.stepnr .p04{ height:80px; overflow:hidden; line-height:30px; font-size:14px;padding:5px 0; position:relative;}
+.stepnr .p2{ height:30px; overflow:hidden; line-height:30px; font-size:14px;padding-top:30px;}
+.stepnr .p02{ height:40px; overflow:hidden; line-height:40px; font-size:14px;padding-top:30px;}
+.pxnr{height:30px; overflow:hidden; line-height:30px;padding-left:126px; font-size:14px;}
+.stepnr .lefttxt{ width:126px; float:left; text-align:right;}
+.stepnr .lefttxt00{ width:80px; float:left; text-align:right;}
+.stepnr .inputtxt{ width:280px; float:left;height:28px; line-height:28px; border:1px solid #ddd;padding:0;color:#666; font-size:14px;}
+.stepnr .inputtxtname{ width:180px; float:left;height:28px; line-height:28px; border:1px solid #ddd;padding:0;color:#666; font-size:14px;}
+.stepnr .inputtxtname2{ width:250px; float:left;height:28px; line-height:28px; border:1px solid #ddd;padding:0;color:#666; font-size:14px;}
+.stepnr .gender{ float:left; margin-left:10px;margin-right:10px;}
+.stepnr .inputcode{ width:120px; float:left;height:28px; line-height:28px; border:1px solid #ddd;padding:0;color:#666; font-size:14px;margin-right:10px;}
+.stepnr .postyz{ width:150px; float:left;height:30px; line-height:28px; border:1px solid #ddd;padding:0;color:#fff; font-size:14px; cursor:pointer; background:#39F;}
+.stepnr .postyz-no{ width:150px; float:left;height:30px; line-height:28px; border:1px solid #ddd;padding:0;color:#666; font-size:14px; cursor:pointer; background:#f9f9f9;}
+.stepnr .nextbtn{ width:150px;height:40px;border:1px solid #ddd;padding:0;color:#fff; font-size:14px; cursor:pointer; background:#c10208;margin-left:126px;}
+.stepnr .nextbtn2{ width:150px;height:40px;border:1px solid #ddd;padding:0;color:#fff; font-size:14px; cursor:pointer; background:#c10208;margin:auto; display:block}
+.stepnr .nextbtn3{ width:280px;height:40px;border:1px solid #ddd;padding:0;color:#fff; font-size:14px; cursor:pointer; background:#060;margin-left:126px;}
+.stepnr .nextbtn4{ width:150px;height:40px;border:1px solid #ddd;padding:0;color:#fff; font-size:14px; cursor:pointer; background:#060;margin-left:80px;}
+.stepnr .nextbtn5{ width:150px;height:40px;border:1px solid #ddd;padding:0;color:#fff; font-size:14px; cursor:pointer; background:#060;margin-left:126px;}
+.error-box{border:1px solid #C00}
+.errtiptxt{ position:absolute; background:#fff;color:#f00;height:20px; line-height:20px;padding:0 5px; bottom:0; left:136px; font-size:12px;}
+
+.mebrtitlebox{ height:34px; padding-left:24px;  border-bottom:1px solid #e4e4e4;   font-size:14px;margin-top:5px;margin-bottom:10px;color:#666;   overflow:hidden; background:url(tlbg.gif) left center no-repeat; }
+.mebrtitlebox .lefttxt{ float:left; width:300px;font-weight:bold;font-size:16px;line-height:34px;}
+.mebrtitlebox .r-a{ font-size:12px; color:#C00; width:110px;height:22px; background:url(btnbg.gif) center center;border:1px solid #dac064; display:block; float:right; line-height:22px; text-align:center;margin-top:8px;}
+
+.pdlr5{padding-left:5px; padding-right:5px;}
+.gdlb{ margin-right:10px;}
+.xtxxbox{}
+.xtxxbox .xxqtbox{height:24px; line-height:24px; overflow:hidden; font-size:12px;}
+.xtxxbox .xxqtbox .time{ float:left; color:#999; }
+.xtxxbox .xxqtbox .abtn{ float:right;}
+.xtxxbox .xxqtbox .abtn a{ display:block; width:40px; height:22px; text-align:center; line-height:22px; background:#fff;border:1px solid #ddd;}
+.xtxxbox .xxqtbox .abtn a:hover{ background:#f1f1f1;border:1px solid #ccc;}
+.xtxxbox .xxnrbox{ line-height:20px; color:#444; clear:both;}
+.xtxxbox .xxnrbox a{ color:#06F;}
+.xtxxbox .xxnrbox a:hover{ color:#f00;}
+.xtxxbox li{ padding-left:40px;padding-top:5px; padding-bottom:5px; border-bottom:1px dotted #ddd; background:url(ico-mail.gif) 16px 9px no-repeat;}
+.inputtip{ font-size:12px; color:#999; padding-left:10px;}
+.reg{ color:#f00;}
+
+
+.positionbox{ height:36px; line-height:36px; padding-left:20px; background:url(ico-bj.png) left center no-repeat;color:#666; font-size:13px; font-weight:normal;}
+
+.positionbox span{margin:0 5px;}
+.positionbox a{color:#666;}
+.positionbox a:hover{color:#000;}
+.qc{ clear:both; overflow:hidden;}
+.headimgbox{padding:20px 0;}
+.headimgbox .hyxxxx{ width:600px; float:right;margin-right:10px; color:#666}
+.headimgbox .img{ width:120px; float:left; position:relative;}
+.headimgbox .img .vipimg{ width:23px; height:23px; position:absolute; top:-4px; left:-5px; background:url(qjnvip.png) top left no-repeat; z-index:1}
+.headimgbox .hyxxxx p{padding:8px 0; line-height:20px;}
+.headimgbox .hyxxxx .b{color:#333; font-size:16px; padding:0 5px;}
+.headimgbox .hyxxxx .wy{font-size:12px;}
+
+.orderlist{ font-size:12px;color:#666;}
+
+.orderlist td{padding:2px 5px; line-height:18px;}
+.orderlist .th td{padding:5px; line-height:20px;}
+.orderlist .th{border-top:1px solid #ddd; border-bottom:1px solid #ddd; background:#EAEAEA}
+.orderlist .addtime{color:#999;width:124px;}
+.orderlist .odnum{ font-size:14px; color:#000;}
+.orderlist .odlistl{width:20px; background:#ddd; font-size:16px; color:#666; text-align:center; font-weight:bold;}
+.orderlist .odlistl .gehe{height:10px; overflow:hidden;}
+.orderlist .odlistl .gehe td{height:10px; overflow:hidden; padding:0px; line-height:10px;}
+
+
+.mbnewslist{}
+.mbnewslist .listtitle{ height:34px; line-height:34px; position:relative; border-bottom:2px solid #ddd;margin-bottom:15px; overflow:hidden; clear:both;}
+.mbnewslist .listtitle .t{ position:absolute;left:10px;width:150px; text-align:center; font-size:16px; color:#800000; font-weight:bold; background:#ddd; position:relative;
+-moz-border-radius:0 20px 0 0px;
+-webkit-border-radius:0 20px 0 0px; 
+border-radius:0 20px 0 0px;
+behavior: url(/ie-css3.htc);
+}
+.mbnewslist .listtitle .a{ position:absolute;right:10px;width:100px; text-align:right; font-size:12px;top:0;}
+.mbnewslist .ul{ clear:both}
+.mbnewslist .ul .li{width:140px; height:170px; float:left;margin:15px;padding:9px; border:1px solid #ddd; background:#fff; position:relative; overflow:hidden;}
+.mbnewslist .ul .li a{width:140px; height:170px; display:block;}
+.mbnewslist .ul .li .img{height:140px;width:140px; overflow:hidden}
+.mbnewslist .ul .li img{ max-height:140px; max-width:140px;}
+.mbnewslist .ul .li .tx{width:140px; height:30px; line-height:30px; overflow:hidden; text-align:center; position:absolute; bottom:10px;}
