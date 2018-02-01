@@ -10,6 +10,15 @@ namespace LvDu.Controllers
 {
     public class HomeController : Controller
     {
+
+
+        public ActionResult CheckLogin(string username, string password)
+        {
+            string a = Session["a"].ToString();
+
+            return View();
+        }
+
         // GET: Home
         /// <summary>
         /// 首页
@@ -67,6 +76,26 @@ namespace LvDu.Controllers
 
             return View();
         }
+        ///单页不带图片的
+        ///
+        public ActionResult Page(Guid id)
+        {
+            List<Entity.Nav> list = new List<Entity.Nav>();
+            List<Entity.Son> sonList = new List<Entity.Son>();
+            List<Entity.Info> infoList = new List<Entity.Info>();
+
+            list = getList();
+            sonList = getSonList(id);
+            infoList = getInfoList(id);
+
+            ViewBag.sonList = sonList;
+            ViewBag.list = list;
+            ViewBag.infoList = infoList;
+            ViewBag.id = id;
+            return View();
+
+        }
+
         /// <summary>
         /// 图片点击之后跳转的详情页
         /// </summary>
@@ -91,7 +120,7 @@ namespace LvDu.Controllers
 
             List<Entity.Info> info = new List<Entity.Info>();
             info = getInfo(id);
-                        
+
             ViewBag.list = list;
             ViewBag.id = id;
             ViewBag.info = info;
@@ -104,7 +133,7 @@ namespace LvDu.Controllers
         /// </summary>
         /// <param name="nav"></param>
         /// <param name="mDr"></param>
-        private void AddSon(Entity.Nav nav , DataRow mDr)
+        private void AddSon(Entity.Nav nav, DataRow mDr)
         {
             Entity.Son son = new Entity.Son();
 
@@ -115,7 +144,7 @@ namespace LvDu.Controllers
 
             son.createtime = (DateTime)mDr["createtime"];
             son.pageType = mDr["pagetype"].ToString();
-           
+
             nav.sonList.Add(son);
         }
         /// <summary>
@@ -144,12 +173,12 @@ namespace LvDu.Controllers
                     nav.sonList = new List<Entity.Son>();
                     list.Add(nav);
                     if (nav.novType)
-                        AddSon(nav , mDr);
+                        AddSon(nav, mDr);
                 }
                 else
                 {
                     var nav = list.Where(t => t.id == id).FirstOrDefault();
-                    AddSon(nav , mDr);
+                    AddSon(nav, mDr);
                 }
             }
 
@@ -177,10 +206,10 @@ namespace LvDu.Controllers
             {
                 Entity.Son son = new Entity.Son()
                 {
-                    id = (Guid)mDr["id"] ,
-                    title = mDr["title"].ToString() ,
-                    up_item = (Guid)mDr["up_item"] ,
-                    position = (int)mDr["position"] ,
+                    id = (Guid)mDr["id"],
+                    title = mDr["title"].ToString(),
+                    up_item = (Guid)mDr["up_item"],
+                    position = (int)mDr["position"],
                     pageType = mDr["pagetype"].ToString()
                 };
                 list.Add(son);
@@ -203,13 +232,13 @@ namespace LvDu.Controllers
             {
                 Entity.Info son = new Entity.Info()
                 {
-                    id = (Guid)mDr["id"] ,
-                    title = mDr["title"].ToString() ,
-                    up_item = (Guid)mDr["up_item"] ,
-                    position = (int)mDr["position"] ,
-                    info = mDr["info"].ToString() ,
-                    img_b = mDr["img_b"].ToString() ,
-                    img_s = mDr["img_s"].ToString() ,
+                    id = (Guid)mDr["id"],
+                    title = mDr["title"].ToString(),
+                    up_item = (Guid)mDr["up_item"],
+                    position = (int)mDr["position"],
+                    info = mDr["info"].ToString(),
+                    img_b = mDr["img_b"].ToString(),
+                    img_s = mDr["img_s"].ToString(),
                     video = mDr["video"].ToString()
                 };
                 list.Add(son);
@@ -226,13 +255,13 @@ namespace LvDu.Controllers
             {
                 Entity.Info son = new Entity.Info()
                 {
-                    id = (Guid)mDr["id"] ,
-                    title = mDr["title"].ToString() ,
-                    up_item = (Guid)mDr["up_item"] ,
-                    position = (int)mDr["position"] ,
-                    info = mDr["info"].ToString() ,
-                    img_b = mDr["img_b"].ToString() ,
-                    img_s = mDr["img_s"].ToString() ,
+                    id = (Guid)mDr["id"],
+                    title = mDr["title"].ToString(),
+                    up_item = (Guid)mDr["up_item"],
+                    position = (int)mDr["position"],
+                    info = mDr["info"].ToString(),
+                    img_b = mDr["img_b"].ToString(),
+                    img_s = mDr["img_s"].ToString(),
                     video = mDr["video"].ToString()
                 };
                 list.Add(son);

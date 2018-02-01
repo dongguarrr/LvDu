@@ -5,27 +5,29 @@
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
-    <title>southbeauty</title>
-    <link rel="stylesheet" href="/css/main.css" />
+    <title></title>
+
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/topnav_info.css" />
+    <link rel="stylesheet" href="../css/member.css" />
     <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+
 </head>
-
-@{
-    List<LvDu.Entity.Nav> list = ViewBag.top_nav;
-
-}
-
 <body>
-    <!--  ==========  -->
-    <!--  = 顶部导航栏 =  -->
-    <!--  ==========  -->
+
+
+    @{
+        List<LvDu.Entity.Nav> list = ViewBag.top_nav;
+
+    }
+
+
     <div class="topnav">
         <div class="wraper">
             <div class="logo">
-                <img src="/image/logo.jpg" width="140px" height="60px" />
+                <img src="http://www.southbeauty.com/qjn/images/qjnlogo.png" width="140px" height="60px" />
             </div>
             <div class="topbox">
                 <div class="toptxt1">
@@ -46,8 +48,8 @@
                     时间：2018-01-24
                     描述：分类导航栏
                 -->
-                <ul class="navbox">
 
+                <ul class="navbox">
                     @{
                         System.Text.StringBuilder sb = new System.Text.StringBuilder();
                         foreach (var item in list)
@@ -66,13 +68,13 @@
                                 sb.Append("<ul class='childernav' style='display: none;'>");
                                 foreach (var sonItem in item.sonList)
                                 {
-                                    if(sonItem.pageType=="单页")
+                                    if (sonItem.pageType == "单页")
                                     {
                                         sb.Append("<li><a href='/Home/Text/" + sonItem.id + "'>" + sonItem.title + "</a></li>");
                                     }
-                                    else if(sonItem.pageType == "正常")
+                                    else if (sonItem.pageType == "正常")
                                     {
-                                        sb.Append("<li><a href='/Home/Page/"+sonItem.id+"'>" + sonItem.title + "</a></li>");
+                                        sb.Append("<li><a href='/Home/Page/" + sonItem.id + "'>" + sonItem.title + "</a></li>");
                                     }
                                     else if (sonItem.pageType == "瀑布流")
                                     {
@@ -90,76 +92,50 @@
             </div>
         </div>
     </div>
+    <!--
+        作者：dongguarrr@126.com
+        时间：2018-01-24
+        描述：
+    -->
 
-    <!--  ==========  -->
-    <!--  = 中间图片部分 =  -->
-    <!--  ==========  -->
-    <div class="middle">
-        <ul class="midbox">
-            <li>
-                <a style="background: url(/image/middle.jpg) center top no-repeat;
-						display: block;
-						height: 655px;"></a>
-            </li>
-        </ul>
-    </div>
-    <!--  ==========  -->
-    <!--  = 留白 =  -->
-    <!--  ==========  -->
-    <div id="indexcon" style="margin-top:-80px; height:80px;"></div>
 
-    <!--  ==========  -->
-    <!--  = 分类图片 =  -->
-    <!--  ==========  -->
-    <div class="indexbox">
-        <div id="container">
-            <div id="footer">
-                <div id="content">
-                    <div class="indexcon wraper">
-                        <div class="indexconArea_1">
-                            <ul class="clearfix">
-                                <li>
-                                    <a href="http://www.southbeauty.com/index.php?app=china&amp;c=index">
-                                        <img src="http://www.southbeauty.com/qjn/images/indexim1.jpg">
-                                    </a>
-                                    <p>INSIDE SOUTH BEAUTY</p>
-                                    <p id="order">走进俏江南</p>
-                                </li>
-                                <li>
-                                    <a href="http://www.southbeauty.com/index.php?app=news&amp;c=index">
-                                        <img src="http://www.southbeauty.com/qjn/images/indexim2.jpg">
-                                    </a>
-                                    <p>SOUTH BEAUTY NEWS</p>
-                                    <p>俏江南新闻</p>
-                                </li>
-                                <li>
-                                    <a href="http://www.southbeauty.com/index.php?app=yummy&amp;c=index">
-                                        <img src="http://www.southbeauty.com/qjn/images/indexim3.jpg">
-                                    </a>
-                                    <p>SOUTH BEAUTY DELICIOUS</p>
-                                    <p>俏江南美味</p>
-                                </li>
 
-                            </ul>
-                        </div>
-                        <div class="indexconArea_2">
-                            <h2>俏江南在线订座</h2>
-                            <p>
-                                <a href="http://www.southbeauty.com/index.php?app=map&amp;c=index">寻找全国店铺</a>
-                            </p>
-                        </div>
+
+
+    <div class="container wraper ziye_1">
+        <div class="wrap min-h-500">
+            <div class="regbox">
+                <div class="img"><img src="/qjn/member/regbg.jpg" width="640" height="410"></div>
+                <div class="reg">
+                    <div class="regxb">
+                        <div class="titletxt">会员登录</div>
+                        <form id="form1" name="form1" method="post" action="/Login/checklogin">
+                            <div class="p">
+                                <input class="input useript" id="username" name="username" size="20" value=""><label for="username" class="lab" style="display: block;">用户名/Email</label>
+                            </div>
+                            <div class="p">
+                                <input name="password" class="input passipt" id="password" size="20" maxlength="20" type="password"><label for="password" class="lab">密码</label>
+                            </div>
+                            <div class="p">
+                                <input name="提交" class="tjbtn" value="会员登录" type="submit">
+                            </div>
+                            <div class="p2">
+                                <span class="f-l" style="color:#999">还没有账号？<a href="http://www.southbeauty.com/index.php?app=member&amp;c=reg">免费注册</a></span><span class="f-r"><a href="http://www.southbeauty.com/index.php?app=member&amp;c=findpass&amp;step=one">忘记密码？</a></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div>
-                    <div style="height:30px; display:block;"></div>
-                    <div class="wxbbbox">
-                        <div class="ico-wx">官方微信：用微信内置的“扫一扫”功能扫描</div>
-                        <div class="ico-wb">官方微博：<a href="http://weibo.com/southbeauty" target="_blank">@@俏江南</a></div>
-                    </div>
-                </div>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>
+
+    <!--
+        作者：dongguarrr@126.com
+        时间：2018-01-24
+        描述：
+    -->
     <!--  ==========  -->
     <!--  = 联系我们 =  -->
     <!--  ==========  -->
@@ -197,7 +173,7 @@
             <div class="popPanel" style="width: 0px; display: block;">
                 <div class="popPanel-inner">
                     <div class="qrcodePanel">
-                        <img src="/img/iwx.png">
+                        <img src="../img/iwx.png">
                         <span>关注俏江南，乐享每一天</span>
                     </div>
                     <div class="arrowPanel">
@@ -207,8 +183,7 @@
                 </div>
             </div>
         </div>
-        <script src="/js/topnav.js"></script>
-        <script src="/js/float.js"></script>
+        <script src="../js/topnav.js"></script>
+        <script src="../js/float.js"></script>
 </body>
-
 </html>

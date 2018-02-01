@@ -101,6 +101,7 @@
     <Content Include="image\bf3.jpg" />
     <Content Include="image\bf4.jpg" />
     <Content Include="image\bf5.jpg" />
+    <Content Include="image\middle.jpg" />
     <Content Include="image\news4.jpg" />
     <Content Include="image\bg_ziye_2.jpg" />
     <Content Include="image\d1.jpg" />
@@ -138,9 +139,11 @@
     <Content Include="image\searchbtn.png" />
     <Content Include="image\tit_1.png" />
     <Content Include="image\tit_2.png" />
+    <Content Include="image\tit_3.jpg" />
     <Content Include="image\ziye_1_logo.png" />
     <Content Include="js\float.js" />
     <Content Include="js\function.js" />
+    <Content Include="js\jquery.validate.js" />
     <Content Include="js\picter.js" />
     <Content Include="js\time2.js" />
     <Content Include="js\topnav.js" />
@@ -183,6 +186,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InsertController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\testVedioController.cs" />
     <Compile Include="dboUtils\DboUtils.cs" />
     <Compile Include="Entity\Entity.cs" />
@@ -201,6 +206,8 @@
     <Content Include="Views\Home\Info.cshtml" />
     <Content Include="Views\Home\Video.cshtml" />
     <Content Include="Views\Insert\Index.cshtml" />
+    <Content Include="Views\Home\Page.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -211,6 +218,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Register\" />
     <Folder Include="Views\testVedio\" />
   </ItemGroup>
   <PropertyGroup>

@@ -100,46 +100,39 @@
         描述：
     -->
     <div style="background:white url(/image/bg_ziye_2.jpg) center top;">
-        <div class="container wraper ziye_1">
+        <div class="container wraper nobg">
+            <h2 class="title tit_3 hidden"></h2>
             <div class="connav">
                 <ul>
                     @{
-                        System.Text.StringBuilder sb1 = new System.Text.StringBuilder();
-                        foreach (var item in sonList)
-                        {
-                            sb1.Append("<li><a href='/Home/Text/" + item.id + "'>" + item.title + "</a></li>");
-                        }
+                System.Text.StringBuilder sb1 = new System.Text.StringBuilder();
+                foreach (var item in sonList)
+                {
+                    sb1.Append("<li><a href='/Home/Text/" + item.id + "'>" + item.title + "</a></li>");
+                }
                     }
                     @Html.Raw(sb1.ToString())
                 </ul>
             </div>
-            <div class="ziye_1_1">
-                <img src="/image/ziye_1_logo.png">
-            </div>
-            <div class="ziye_1_2">
-                <!--
-                    作者：dongguarrr@126.com
-                    时间：2018-01-23
-                    描述：子页2  右侧部分
-                -->
-                <h2 class="hidden">俏江南中国</h2>
-                <div id="boxscroll" class="sub_article scrollbar" style="overflow:  auto;" tabindex="5000">
-                    <div class="scrollbarBox">
-                        @{
-                            System.Text.StringBuilder sb3 = new System.Text.StringBuilder();
-                            if (infoList.Count != 0)
-                            {
-                                sb3.Append(infoList[0].info);
-                            }
-                        }
-                        @Html.Raw(sb3.ToString())
+            <div class="map">
 
-                        <p class="p2"></p>
-                    </div>
+
+
+                <h2>@infoList[0].title</h2>
+                <div class="map_txt">
+                    
+                    @{ 
+                        System.Text.StringBuilder sb2 = new System.Text.StringBuilder();
+
+                        sb2.Append(infoList[0].info);
+
+                    }
+                    @Html.Raw(sb2.ToString());
+
                 </div>
             </div>
-        </div>
-        <body>
+
+        </div>        
             <!--  ==========  -->
             <!--  = 联系我们 =  -->
             <!--  ==========  -->

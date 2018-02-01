@@ -23,6 +23,7 @@ namespace LvDu.dboUtils
                 if (conn.State == ConnectionState.Closed)
                 {
                     conn.Open();//打开数据库连接
+                    
                 }
             }
         }
@@ -48,16 +49,6 @@ namespace LvDu.dboUtils
             connClose();//关闭连接
             return x;  //返回一个影响行数
         }
-       
-        /// 关闭数据库连接
-        public void connClose()
-        {
-            if (conn.State == ConnectionState.Open)
-            {
-                //判断数据库的连接状态，如果状态是打开的话就将它关闭
-                conn.Close();
-            }
-        }
 
         /// 向数据库中插入数据
         /// 
@@ -69,6 +60,16 @@ namespace LvDu.dboUtils
             com.CommandType = CommandType.Text;
             com.ExecuteNonQuery();
             return raw;
+        }
+
+        /// 关闭数据库连接
+        public void connClose()
+        {
+            if (conn.State == ConnectionState.Open)
+            {
+                //判断数据库的连接状态，如果状态是打开的话就将它关闭
+                conn.Close();
+            }
         }
 
     }
