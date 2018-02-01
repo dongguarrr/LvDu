@@ -93,6 +93,7 @@
     <Content Include="css\member.css" />
     <Content Include="css\new.css" />
     <Content Include="css\topnav_info.css" />
+    <Content Include="css\video-js.css" />
     <Content Include="css\video.css" />
     <Content Include="Global.asax" />
     <Content Include="image\bf1.jpg" />
@@ -138,13 +139,14 @@
     <Content Include="image\tit_1.png" />
     <Content Include="image\tit_2.png" />
     <Content Include="image\ziye_1_logo.png" />
-    <Content Include="js\ckplayer.js" />
-    <Content Include="js\ckplayer.min.js" />
     <Content Include="js\float.js" />
     <Content Include="js\function.js" />
     <Content Include="js\picter.js" />
     <Content Include="js\time2.js" />
     <Content Include="js\topnav.js" />
+    <Content Include="js\video.min.js" />
+    <Content Include="js\videojs-ie8.min.js" />
+    <Content Include="js\zh-CN.js" />
     <Content Include="video\video1.mp4" />
     <Content Include="Web.config" />
     <Content Include="web\activity.html" />
@@ -180,6 +182,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InsertController.cs" />
+    <Compile Include="Controllers\testVedioController.cs" />
     <Compile Include="dboUtils\DboUtils.cs" />
     <Compile Include="Entity\Entity.cs" />
     <Compile Include="Entity\CommonEnum.cs" />
@@ -196,6 +200,7 @@
     <Content Include="Views\Home\WaterFall.cshtml" />
     <Content Include="Views\Home\Info.cshtml" />
     <Content Include="Views\Home\Video.cshtml" />
+    <Content Include="Views\Insert\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -206,6 +211,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\testVedio\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

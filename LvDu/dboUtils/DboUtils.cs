@@ -59,7 +59,17 @@ namespace LvDu.dboUtils
             }
         }
 
-
+        /// 向数据库中插入数据
+        /// 
+        public int insert(String sql)
+        {
+            int raw = 0;
+            SqlCommand com = conn.CreateCommand();
+            com.CommandText = sql;
+            com.CommandType = CommandType.Text;
+            com.ExecuteNonQuery();
+            return raw;
+        }
 
     }
 

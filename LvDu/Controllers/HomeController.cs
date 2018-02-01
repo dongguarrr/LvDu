@@ -94,6 +94,7 @@ namespace LvDu.Controllers
                         
             ViewBag.list = list;
             ViewBag.id = id;
+            ViewBag.info = info;
 
             return View();
         }
@@ -105,15 +106,16 @@ namespace LvDu.Controllers
         /// <param name="mDr"></param>
         private void AddSon(Entity.Nav nav , DataRow mDr)
         {
-            Entity.Son son = new Entity.Son()
-            {
-                id = (Guid)mDr["sonid"] ,
-                up_item = (Guid)mDr["up_item"] ,
-                position = (int)mDr["sonposition"] ,
-                title = (String)mDr["sontitle"] ,
-                createtime = (DateTime)mDr["createtime"] ,
-                pageType = (String)mDr["pagetype"]
-            };
+            Entity.Son son = new Entity.Son();
+
+            son.id = (Guid)mDr["sonid"];
+            son.up_item = (Guid)mDr["up_item"];
+            son.position = (int)mDr["sonposition"];
+            son.title = mDr["sontitle"].ToString();
+
+            son.createtime = (DateTime)mDr["createtime"];
+            son.pageType = mDr["pagetype"].ToString();
+           
             nav.sonList.Add(son);
         }
         /// <summary>
@@ -124,7 +126,7 @@ namespace LvDu.Controllers
         private List<Entity.Nav> getList()
         {
             DboUtils db = new DboUtils();
-            String sql = "select top_sum.id ,top_sum.position,top_sum.title,top_sum.novType,top_sub.id sonid,top_sub.position sonposition,up_item,createtime,top_sub.title sontitle,top_sub.nov_type pagetype from top_sum left join top_sub on top_sum.id = top_sub.up_item order by top_sum.position,top_sub.position";
+            String sql = "select top_sum.id ,top_sum.position,top_sum.title,top_sum.nov_type,top_sub.id sonid,top_sub.position sonposition,up_item,createtime,top_sub.title sontitle,top_sub.pagetype from top_sum left join top_sub on top_sum.id = top_sub.up_item order by top_sum.position,top_sub.position";
             DataSet ds = db.query(sql);
 
             List<Entity.Nav> list = new List<Entity.Nav>();
@@ -136,9 +138,9 @@ namespace LvDu.Controllers
                 {
                     Entity.Nav nav = new Entity.Nav();
                     nav.id = id;
-                    nav.title = (String)mDr["title"];
+                    nav.title = mDr["title"].ToString();
                     nav.position = (int)mDr["position"];
-                    nav.novType = (Boolean)mDr["novType"];
+                    nav.novType = (Boolean)mDr["nov_type"];
                     nav.sonList = new List<Entity.Son>();
                     list.Add(nav);
                     if (nav.novType)
@@ -176,10 +178,10 @@ namespace LvDu.Controllers
                 Entity.Son son = new Entity.Son()
                 {
                     id = (Guid)mDr["id"] ,
-                    title = (String)mDr["title"] ,
+                    title = mDr["title"].ToString() ,
                     up_item = (Guid)mDr["up_item"] ,
                     position = (int)mDr["position"] ,
-                    pageType = (String)mDr["nov_type"]
+                    pageType = mDr["pagetype"].ToString()
                 };
                 list.Add(son);
             }
@@ -194,7 +196,7 @@ namespace LvDu.Controllers
         private List<Entity.Info> getInfoList(Guid id)
         {
             DboUtils db = new DboUtils();
-            String sql = "select * from top_info where id='" + id + "'order by position";
+            String sql = "select * from top_info where up_item='" + id + "'order by position";
             DataSet ds = db.query(sql);
             List<Entity.Info> list = new List<Entity.Info>();
             foreach (DataRow mDr in ds.Tables[0].Rows)
@@ -202,7 +204,7 @@ namespace LvDu.Controllers
                 Entity.Info son = new Entity.Info()
                 {
                     id = (Guid)mDr["id"] ,
-                    title = (String)mDr["title"] ,
+                    title = mDr["title"].ToString() ,
                     up_item = (Guid)mDr["up_item"] ,
                     position = (int)mDr["position"] ,
                     info = mDr["info"].ToString() ,
@@ -225,7 +227,7 @@ namespace LvDu.Controllers
                 Entity.Info son = new Entity.Info()
                 {
                     id = (Guid)mDr["id"] ,
-                    title = (String)mDr["title"] ,
+                    title = mDr["title"].ToString() ,
                     up_item = (Guid)mDr["up_item"] ,
                     position = (int)mDr["position"] ,
                     info = mDr["info"].ToString() ,
