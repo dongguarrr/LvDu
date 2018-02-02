@@ -58,7 +58,7 @@ namespace LvDu.dboUtils
             SqlCommand com = conn.CreateCommand();
             com.CommandText = sql;
             com.CommandType = CommandType.Text;
-            com.ExecuteNonQuery();
+            raw=com.ExecuteNonQuery();
             return raw;
         }
 

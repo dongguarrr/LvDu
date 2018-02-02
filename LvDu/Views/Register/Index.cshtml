@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="../css/topnav_info.css" />
     <link rel="stylesheet" href="../css/member.css" />
     <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/check.js"></script>
+    <script src="/js/plug-in.js"></script>
 
 </head>
 <body>
@@ -31,13 +33,13 @@
             </div>
             <div class="topbox">
                 <div class="toptxt1">
-                    <form class="topformbox2" action="/Login/Index" method="post">
+                    <form class="topformbox2" action="login.html" method="post">
                         <input class="topinptxt" type="text" />
                         <input class="topinpbtn" type="button" value="" />
                     </form>
                     <div class="topsro2">
-                        <a class="mr-5" href="/Login/Index">登录</a>
-                        <a class="mr-5" href="/Register/index">注册</a>
+                        <a class="mr-5" href="login.html">登陆</a>
+                        <a class="mr-5" href="/Register">注册</a>
                     </div>
                     <span class="on">服务热线 4001-517-517</span>
                 </div>
@@ -99,36 +101,33 @@
     -->
 
 
+    <div class="container wrapper ziye_1">
 
-
-
-    <div class="container wraper ziye_1">
-        <div class="wrap min-h-500">
-            <div class="regbox">
-                <div class="img"><img src="/qjn/member/regbg.jpg" width="640" height="410"></div>
-                <div class="reg">
-                    <div class="regxb">
-                        <div class="titletxt">会员登录</div>
-                        <form id="form1" name="form1" method="post" action="/Login/checklogin">
-                            <div class="p">
-                                <input class="input useript" id="username" name="username" size="20" value=""><label for="username" class="lab" style="display: block;">用户名/Email</label>
-                            </div>
-                            <div class="p">
-                                <input name="password" class="input passipt" id="password" size="20" maxlength="20" type="password"><label for="password" class="lab">密码</label>
-                            </div>
-                            <div class="p">
-                                <input name="提交" class="tjbtn" value="会员登录" type="submit">
-                            </div>
-                            <div class="p2">
-                                <span class="f-l" style="color:#999">还没有账号？<a href="http://www.southbeauty.com/index.php?app=member&amp;c=reg">免费注册</a></span><span class="f-r"><a href="http://www.southbeauty.com/index.php?app=member&amp;c=findpass&amp;step=one">忘记密码？</a></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+        <form class="find-stepbox" id="form1" name="form1" method="post" action="/Register/register">
+            <div class="step">
+                <div class="stepleft-c"></div>
+                <div class="step0"></div>
                 <div class="clearfix"></div>
             </div>
-        </div>
+            <div class="c_regbox">
+                <div class="stepnr">
+                    <div class="p"><label class="lefttxt"><b class="reg">*</b>用户名：</label><input class="inputtxtname" name="username" id="username" value="" type="text"><span class="inputtip">至少6位字符和数字</span></div>
+                    <div class="p"><label class="lefttxt"><b class="reg">*</b>密码：</label><input class="inputtxtname" id="password" name="password" value="" type="password"><span class="inputtip">至少6位字符和数字</span></div>
+                    <div class="p"><label class="lefttxt"><b class="reg">*</b>真实姓名：</label><input class="inputtxtname" name="realname" id="realname" value="" type="text"><label class="gender">
+                        <input name="gender" value="0" id="gender_0" type="radio">先生</label><label class="gender">
+                        <input name="gender" value="1" id="gender_1" type="radio">女士</label>
+                    </div>
+                    <div class="p"><label class="lefttxt"><b class="reg">*</b>Emai：</label><input name="email" class="inputtxtname" id="email" value="" type="text"><span class="inputtip">请填写正常使用的邮箱，做为账户认证凭证。</span></div>
+                    <div class="p"><label class="lefttxt"><b class="reg">*</b>手机：</label><input class="inputtxt" name="phone" id="phone" value="" type="text"></div>
+                    <div class="p"><label class="lefttxt"><b class="reg">*</b>微信号：</label><input class="inputtxtname" id="wx" name="wx" value="" type="text"><span class="inputtip">至少6位字符和数字</span></div>
+
+                    <div class="pxnr"><input name="checkbox" id="checkbox" class="checkbox" value=""type="checkbox">我已阅读并接受<a href="#" target="_blank">《俏江南集团会员协议》</a></div>
+                    <div class="p02"><input name="提交" class="nextbtn3" id="tjbtn" value="立即注册" type="submit"></div>
+                </div>
+            </div>
+            <div class="okregbox">已有账号，<a href="/Login/login">立即登录</a></div>
+            <div class="clearfix"></div>
+        </form>
     </div>
 
     <!--

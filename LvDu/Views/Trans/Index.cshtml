@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    @{
+        Boolean tag = ViewBag.Tag;
+        String errorText = ViewBag.ErroMessage;
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        if (tag)
+        {
+
+
+            sb.Append("<h2>注册成功,正在跳往登录页面……</h2>");
+
+            //注册成功
+            Response.Write(@"<script   language='javascript'>setTimeout(function ()
+                        {location.href = '/Login/Index'},
+                        3000);
+                        </script>");
+
+        }
+        else
+        {
+            //注册失败
+            //errorText
+            sb.Append("<h2>注册失败,失败原因："+errorText+"<br/>正在返回注册页面……</h2>");
+            Response.Write(@"<script   language='javascript'>setTimeout(function ()
+                        {location.href = '/Register/Index'},
+                        3000);
+                        </script>");
+        }
+    }
+    @Html.Raw(sb.ToString())
+    <div id="trans" style="height:25px;width:400px">
+
+    </div>
+</body>
+</html>
