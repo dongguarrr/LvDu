@@ -1,0 +1,109 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+
+
+        @{
+            List<LvDu.Entity.Nav> list = ViewBag.list;
+        }
+
+        <form id="pagerForm" action="demo/database/dwzOrgLookup.html">
+            <input type="hidden" name="pageNum" value="1" />
+            <input type="hidden" name="numPerPage" value="${model.numPerPage}" />
+            <input type="hidden" name="orderField" value="${param.orderField}" />
+            <input type="hidden" name="orderDirection" value="${param.orderDirection}" />
+        </form>
+        <div class="pageHeader">
+            <form rel="pagerForm" method="post" action="demo/database/dwzOrgLookup.html" onsubmit="return dwzSearch(this, 'dialog');">
+                <div class="searchBar">
+                    <ul class="searchContent" style="height:30px">
+                        <li>
+                            <label>部门名称:</label>
+                            <input class="textInput" name="orgName" value="" type="text">
+                        </li>
+                        <li>
+                            <label>部门编号:</label>
+                            <input class="textInput" name="orgNum" value="" type="text">
+                        </li>
+                        <li>
+                            <label>部门经理:</label>
+                            <input class="textInput" name="fullName" value="" type="text">
+                        </li>
+                        <li>
+                            <label>上级部门:</label>
+                            <input class="textInput" name="parentOrg.orgName" value="" type="text">
+                        </li>
+                    </ul>
+                    <div class="subBar">
+                        <ul>
+                            <li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="pageContent">
+            <table class="table" layoutH="118" targetType="dialog" width="100%">
+                <thead>
+                    <tr>
+                        <th orderfield="orgName">名称</th>
+                        <th orderfield="orgNum">位置</th>
+                        <th orderfield="leader">id</th>
+                        <th orderfield="creator">上级元素</th>
+                        <th width="80">页面类型</th>
+                        <th>查找带回</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{
+                        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                        foreach (var item in list)
+                        {
+                            if (item != null)
+                            {
+                                foreach (var sonItem in item.sonList)
+                                {
+                                    sb.Append("<tr>");
+                                    sb.Append("<td>" + sonItem.title + "</td>");
+                                    sb.Append("<td>" + sonItem.position + "</td>");
+                                    sb.Append("<td>" + sonItem.id + "</td>");
+                                    sb.Append("<td>" + sonItem.up_item + "</td>");
+                                    sb.Append("<td>" + sonItem.pageType + "</td>");
+                                    sb.Append("<td><a class='btnSelect' href='javascript:$.bringBack({id:\"" + sonItem.id + "\", orgName:\"" + sonItem.title + "\", orgNum:\"" + sonItem.up_item + "\"})' title='查找带回'>选择</a></td>");
+                                }
+                            }
+                        }
+                    }
+                    @Html.Raw(sb.ToString())
+
+                </tbody>
+            </table>
+            <div class="panelBar">
+                <div class="pages">
+                    <span>每页</span>
+                    <select name="numPerPage" onchange="dwzPageBreak({targetType:'dialog', numPerPage:'10'})">
+                        <option value="10" selected="selected">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                    <span>条，共2条</span>
+                </div>
+                <div class="pagination" targetType="dialog" totalCount="2" numPerPage="10" pageNumShown="1" currentPage="1"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

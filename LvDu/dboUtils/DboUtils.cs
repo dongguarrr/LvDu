@@ -62,6 +62,17 @@ namespace LvDu.dboUtils
             return raw;
         }
 
+        public int delete(string sql)
+        {
+            SqlCommand oc = new SqlCommand();//表示要对数据源执行的SQL语句或存储过程
+            oc.CommandText = sql;//设置命令的文本
+            oc.CommandType = CommandType.Text;//设置命令的类型
+            oc.Connection = conn;//设置命令的连接
+            int x = oc.ExecuteNonQuery();//执行SQL语句
+            connClose();//关闭连接
+            return x;  //返回一个影响行数
+        }
+
         /// 关闭数据库连接
         public void connClose()
         {
@@ -72,6 +83,7 @@ namespace LvDu.dboUtils
             }
         }
 
+        
     }
 
 }

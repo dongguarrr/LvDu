@@ -34,4 +34,9 @@ namespace LvDu.Entity
         public String img_b{ set; get; }
         public String video{ set; get; }
     }
+    public class Admin
+    {
+        public String username;
+        public String pwd;
+    }
 }

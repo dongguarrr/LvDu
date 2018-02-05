@@ -130,6 +130,7 @@
                             if (infoList.Count != 0)
                             {
                                 sb3.Append(infoList[0].info);
+                                sb3.Append("<a href='/Login/Index'"+infoList[0].id+"<button>修改</button></a>");
                             }
                         }
                         @Html.Raw(sb3.ToString())
