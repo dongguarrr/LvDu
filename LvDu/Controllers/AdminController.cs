@@ -61,7 +61,7 @@ namespace LvDu.Controllers
 
         public String UpdateAdmin(String username,String pwd_confirm)
         {
-            //String nav = "admin2";
+            String nav = "admin2";
             DboUtils db = new DboUtils();
             String sql = "update admin set pwd='" + pwd_confirm + "'";
             int x = db.update(sql);
@@ -70,7 +70,7 @@ namespace LvDu.Controllers
             if (x > 0)
             {
                 message = "操作成功";
-                string json = JsonConvert.SerializeObject(new { message = message, statusCode = 200, navTabId = username, callbackType = "closeCurrent", forwardUrl = "" });
+                string json = JsonConvert.SerializeObject(new { message = message, statusCode = 200, navTabId = nav, callbackType = "closeCurrent", forwardUrl = "" });
                 return json;
             }
             else
@@ -83,7 +83,7 @@ namespace LvDu.Controllers
         public String DeleteFromAdmin(String username)
         {
 
-            //String nav = "admin2";
+            String nav = "GoodsClassTree";
             DboUtils db = new DboUtils();
             String sql = "delete from admin where username='" + username + "'";
             int x = db.delete(sql);
@@ -92,7 +92,7 @@ namespace LvDu.Controllers
             if (x > 0)
             {
                 message = "操作成功";
-                string json = JsonConvert.SerializeObject(new { message = message, statusCode = 200, navTabId = username, callbackType = "", forwardUrl = "" });
+                string json = JsonConvert.SerializeObject(new { message = message, statusCode = 200, navTabId = nav, callbackType = "", forwardUrl = "" });
                 return json;
             }
             else

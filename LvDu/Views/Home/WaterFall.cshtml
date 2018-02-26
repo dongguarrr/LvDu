@@ -75,7 +75,7 @@
                         </form>
                         <div class="topsro2">
                             <a class="mr-5" href="/Login/Index">登录</a>
-                            <a class="mr-5" href="/Register">注册</a>
+                            <a class="mr-5" href="/Register/Index">注册</a>
                         </div>
                         <span class="on">服务热线 4001-517-517</span>
                     </div>
@@ -92,13 +92,32 @@
                             foreach (var item in list)
                             {
                                 sb.Append("<li>");
-                                if (item.sonList.Count != 0 && item.sonList[0].pageType == "单页")
+                                if (item.sonList.Count == 0)
                                 {
-                                    sb.Append(" <a href=\" /Home/Text/" + item.sonList[0].id + "\" style=\"color: red; \">" + item.title + "</a>");
+                                    if (item.id == list.FirstOrDefault().id)
+                                    {
+                                        sb.Append(" <a href=\" /Home/\" style=\"color: red; \">" + item.title + "</a>");
+                                    }
+                                    else
+                                    {
+                                        sb.Append(" <a href=\" /Home/Text/" + item.id + "\" style=\"color: red; \">" + item.title + "</a>");
+                                    }
                                 }
                                 else
                                 {
-                                    sb.Append(" <a href=\" /Home/Text/" + item.id + "\" style=\"color: red; \">" + item.title + "</a>");
+                                    //同下关联
+                                    if (item.sonList.FirstOrDefault().pageType == "瀑布流")//下面有，并且是瀑布流
+                                    {//取下面第一个
+                                        sb.Append(" <a href=\" /Home/WaterFall/" + item.sonList.FirstOrDefault().id + "\" style=\"color: red; \">" + item.title + "</a>");
+                                    }
+                                    else if(item.sonList.FirstOrDefault().pageType == "正常")
+                                    {
+                                        sb.Append(" <a href=\" /Home/Page/" + item.sonList[0].id + "\" style=\"color: red; \">" + item.title + "</a>");
+                                    }
+                                    else if (item.sonList.FirstOrDefault().pageType == "单页")
+                                    {
+                                        sb.Append(" <a href=\" /Home/Text/" + item.sonList[0].id + "\" style=\"color: red; \">" + item.title + "</a>");
+                                    }
                                 }
                                 if (item.sonList.Count > 0)
                                 {
@@ -109,7 +128,11 @@
                                         {
                                             sb.Append("<li><a href='/Home/Text/" + sonItem.id + "'>" + sonItem.title + "</a></li>");
                                         }
-                                        else if (sonItem.pageType == "正常" || sonItem.pageType == "瀑布流")
+                                        else if (sonItem.pageType == "正常")
+                                        {
+                                            sb.Append("<li><a href='/Home/Page/" + sonItem.id + "'>" + sonItem.title + "</a></li>");
+                                        }
+                                        else if (sonItem.pageType == "瀑布流")
                                         {
                                             sb.Append("<li><a href='/Home/WaterFall/" + sonItem.id + "'>" + sonItem.title + "</a></li>");
                                         }

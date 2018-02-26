@@ -39,7 +39,7 @@ namespace LvDu.Controllers
         public ActionResult Text(Guid id)
         {
             List<Entity.Nav> list = new List<Entity.Nav>();
-            List<Entity.Son> sonList = new List<Entity.Son>();
+            List<Entity.Son> sonList;
             List<Entity.Info> infoList = new List<Entity.Info>();
 
             list = getList();
@@ -197,24 +197,29 @@ namespace LvDu.Controllers
             DboUtils db = new DboUtils();
             String sql1 = "select up_item from top_sub where id='" + sonId + "'";
             DataSet ds1 = db.query(sql1);
-            Guid parentId = (Guid)ds1.Tables[0].Rows[0]["up_item"];
-
-            String sql = "select * from top_sub where up_item='" + parentId + "' order by position";
-            DataSet ds = db.query(sql);
-            List<Entity.Son> list = new List<Entity.Son>();
-            foreach (DataRow mDr in ds.Tables[0].Rows)
+            if (ds1.Tables[0].Rows.Count > 0)
             {
-                Entity.Son son = new Entity.Son()
+                Guid parentId = (Guid)ds1.Tables[0].Rows[0]["up_item"];
+
+                String sql = "select * from top_sub where up_item='" + parentId + "' order by position";
+                DataSet ds = db.query(sql);
+                List<Entity.Son> list = new List<Entity.Son>();
+                foreach (DataRow mDr in ds.Tables[0].Rows)
                 {
-                    id = (Guid)mDr["id"],
-                    title = mDr["title"].ToString(),
-                    up_item = (Guid)mDr["up_item"],
-                    position = (int)mDr["position"],
-                    pageType = mDr["pagetype"].ToString()
-                };
-                list.Add(son);
+                    Entity.Son son = new Entity.Son()
+                    {
+                        id = (Guid)mDr["id"],
+                        title = mDr["title"].ToString(),
+                        up_item = (Guid)mDr["up_item"],
+                        position = (int)mDr["position"],
+                        pageType = mDr["pagetype"].ToString()
+                    };
+                    list.Add(son);
+                }
+                return list;
             }
-            return list;
+            else
+                return new List<Entity.Son>();
         }
 
         /// <summary>

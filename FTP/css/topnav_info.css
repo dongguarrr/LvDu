@@ -1,0 +1,266 @@
+img{
+	border: 0px;
+}
+.container{
+    min-height:525px;
+	padding-top: 100px;
+	margin-bottom: 50px;
+	clear: both;
+}
+.container .connav{
+	height: 30px;
+	overflow: hidden;
+	float: right;
+	margin-bottom: 20px;
+}
+.container .connav li{
+	float: left;
+	margin-left: 23px;
+}
+.container .connav li a:hover, 
+.container .connav li.on a {
+    color: #000;
+}
+.container .connav li a {
+    color: #999;
+    font-size: 12px;
+    font-weight: bold;
+}
+.ziye_1_1{
+	float: left;
+	margin-left: 80px;
+}
+.ziye_1_2{
+	float: right;
+	width: 440px;
+	margin-right: 60px;
+	line-height: 23px;
+}
+.ziye_1_2 h2{
+	background: url(/image/tit_1.png) center top no-repeat;
+	width: 120px;
+	height: 48px;
+	margin-bottom: 18px;
+	display: block;
+}
+.hidden{
+	line-height: 9999px;
+	overflow: hidden;
+}
+.scrollbar{
+	height: 350px;
+	position: relative;
+}
+.scrollbar .scrollbarBox{
+	padding: 0px 15px 0px 0px;
+}
+.p1{
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	padding-bottom: 18px;
+	letter-spacing: 1px;
+}
+.container p span {
+    color: #555 !important;
+}
+#per_info img{
+	height: 139px;
+	width: 85px;
+	overflow: auto;
+}
+td{
+	padding: 8px;
+}
+.bodybg_2{
+	background: #fff url(/image/bg_ziye_2.jpg) center top;
+}
+.nobg{
+	background: none;
+}
+.container .tit_2{
+	background: url(/image/tit_2.png) no-repeat;
+	width: 184px;
+	height: 44px;
+}
+.container .title{
+	float: left;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+.food{
+	position: relative;
+	margin: 0px 10px;
+	clear: both;
+}
+.grid{
+	width: 270px;
+	min-height: 100px;
+	padding: 20px;
+	font-size: 12px;
+	float: left;
+	box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+	
+}
+.food .grid {
+    background: #fff;
+    padding: 20px;
+    width: 200px;
+    margin: 0 20px;
+}
+.food .grid p{
+	font-size: 12px;
+	font-weight: normal;
+	color: #666;
+	text-align: center;
+}
+.food .grid img{
+	width: 100%;
+	cursor: pointer;
+}
+
+.fullpop{
+	background: white;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	opacity: 0.5;
+	z-index: 900;
+	display: none;
+}
+.foodpop{
+	position: fixed;
+	width: 988px;
+	left: 50%;
+	margin-left: -494px;
+	top:50%;
+	z-index: 1000;
+	display: none;
+	margin-left: -494px;
+	opacity: 0;
+}
+.foodpop_clo {
+    background: url(/image/pop_clo.png) no-repeat;
+    width: 57px;
+    height: 57px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.foodpop_img img{
+	width: 988px;
+	height: 537px;
+}
+.foodpop_txt {
+    height: 60px;
+    background: #000;
+    color: #CCC;
+    font-size: 18px;
+    padding: 5px 20px;
+    overflow: hidden;
+}
+.foodpop_txt h4 {
+    font-size: 14px;
+}
+.foodpop_txt p {
+    font-size: 12px;
+    word-break: break-all;
+}
+.leftBar {
+    background: url(/image/poparr.png) no-repeat 0 0;
+    width: 39px;
+    height: 78px;
+    position: absolute;
+    left: 20px;
+    top: 250px;
+    cursor: pointer;
+}
+.rightBar {
+    background: url(/image/poparr.png) no-repeat 0 -78px;
+    width: 39px;
+    height: 78px;
+    position: absolute;
+    right: 20px;
+    top: 250px;
+    cursor: pointer;
+}
+
+
+.container .tit_3{
+	background: url(/image/tit_3.jpg) no-repeat;
+	width: 184px;
+	height: 44px;
+}
+.map {
+    margin: 10px;
+    width: 900px;
+    position: relative;
+    clear: both;
+}
+.map_txt {
+    padding: 20px;
+    color: #999;
+    font-size: 14px;
+}
+.map h2 {
+    color: #555;
+    font-size: 16px;
+    padding: 20px;
+}
+.activity{
+	position: relative;
+	margin: 0px 10px;
+	clear: both;
+	margin-left: 40px;
+}
+.activity .grid{
+	background: white;
+	padding: 20px;
+}
+.activity .grid p {
+    font-size: 12px;
+    font-weight: normal;
+    color: #666;
+}
+.grid img {
+    width: 100%;
+    cursor: pointer;
+}
+.container .tit_4{
+	background: url(/image/tit_4.png) no-repeat;
+	width: 184px;
+	height: 44px;
+}
+.container .tit_news {
+    background: url(/image/tit_news.png) no-repeat;
+    width: 204px;
+    height: 44px;
+}
+.tit_offer{
+    color: #555;
+    font-size: 16px;
+    padding: 20px;
+}
+.news_sidebar{
+	float: right;
+	width: 285px;
+	margin-left: 4px;
+}
+.news_sidebar li{
+	padding: 10px 15px;
+	margin-bottom: 10px;
+	background: white;
+}
+.news_sidebar li img {
+    width: 255px;
+    text-align: center;
+}
+.news_sidebar li p {
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+    line-height: 22px;
+}

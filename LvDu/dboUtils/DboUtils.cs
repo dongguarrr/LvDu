@@ -15,9 +15,11 @@ namespace LvDu.dboUtils
         public DboUtils()
         {
             if (conn == null)
-            {   
+            {
                 //判断连接是否为空
-                String conString = "server=.;database=test;uid=sa;pwd=sa";
+                //String conString = "server=.;database=test;uid=sa;pwd=sa";
+                //string conString = System.Configuration.ConfigurationManager.AppSettings["conStr"];//连接数据库的字符串
+                string conString = System.Configuration.ConfigurationManager.ConnectionStrings["connstr"].ConnectionString;
                 conn = new SqlConnection(conString);
 
                 if (conn.State == ConnectionState.Closed)

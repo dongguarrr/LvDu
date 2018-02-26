@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @{ 
+        int[] array = ViewBag.array;
+    }
+    <div> 
+        1?????
+        @{ 
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            foreach (var item in array)
+            {
+                sb.Append("2????");
+                sb.Append("<h2>"+item+"</h2><br/>");
+            }
+            Html.Raw(sb.ToString());
+        }
+    </div>
+</body>
+</html>

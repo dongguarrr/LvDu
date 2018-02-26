@@ -56,13 +56,28 @@
                         foreach (var item in list)
                         {
                             sb.Append("<li>");
-                            if (item.sonList.Count != 0)
+                            if (item.sonList.Count == 0)
                             {
-                                sb.Append(" <a href=\" /Home/Text/" + item.sonList[0].id + "\" style=\"color: red; \">" + item.title + "</a>");
+                                if (item.id == list.FirstOrDefault().id)
+                                {
+                                    sb.Append(" <a href=\" /Home/\" style=\"color: red; \">" + item.title + "</a>");
+                                }
+                                else
+                                {
+                                    sb.Append(" <a href=\" /Home/Text/" + item.id + "\" style=\"color: red; \">" + item.title + "</a>");
+                                }
                             }
                             else
                             {
-                                sb.Append(" <a href=\" /Home/Text/" + item.id + "\" style=\"color: red; \">" + item.title + "</a>");
+                                //同下关联
+                                if (item.sonList.FirstOrDefault().pageType == "瀑布流")//下面有，并且是瀑布流
+                                {//取下面第一个
+                                    sb.Append(" <a href=\" /Home/WaterFall/" + item.sonList.FirstOrDefault().id + "\" style=\"color: red; \">" + item.title + "</a>");
+                                }
+                                else
+                                {
+                                    sb.Append(" <a href=\" /Home/Text/" + item.sonList[0].id + "\" style=\"color: red; \">" + item.title + "</a>");
+                                }
                             }
                             if (item.sonList.Count > 0)
                             {

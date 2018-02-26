@@ -90,6 +90,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\LvDu.dll" />
+    <Content Include="bin\LvDu.pdb" />
     <Content Include="css\main.css" />
     <Content Include="css\member.css" />
     <Content Include="css\new.css" />
@@ -147,7 +149,7 @@
     <Content Include="dwz\demo_upload.html" />
     <Content Include="dwz\doc\git.txt" />
     <Content Include="dwz\donation.html" />
-    <Content Include="dwz\dwz.frag.xml" />
+    <Content Include="dwz.frag.xml" />
     <Content Include="dwz\favicon.ico" />
     <Content Include="dwz\index.html" />
     <Content Include="dwz\index_menu.html" />
@@ -801,7 +803,9 @@
     <Content Include="js\videojs-ie8.min.js" />
     <Content Include="js\zh-CN.js" />
     <Content Include="video\video1.mp4" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="web\activity.html" />
     <Content Include="web\login.html" />
     <Content Include="web\main.html" />
@@ -848,6 +852,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -859,6 +866,7 @@
     <Content Include="dwz\doc\dwz-user-guide.docx" />
     <Content Include="dwz\doc\dwz-user-guide.pdf" />
     <Content Include="dwz\README.md" />
+    <Content Include="obj\Release\LvDu.csproj.CoreCompileInputs.cache" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Home\Text.cshtml" />
@@ -877,6 +885,7 @@
     <Content Include="Views\Admin\GetAdminList.cshtml" />
     <Content Include="Views\Modify\QueryFromInfo.cshtml" />
     <Content Include="Views\Admin\QueryFromAdmin.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
