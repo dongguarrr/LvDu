@@ -151,7 +151,7 @@
                                     {
                                         if (item.id == list.FirstOrDefault().id)
                                         {
-                                            sb.Append(" <a href=\" /Home/\" style=\"color: red; \">" + item.title + "</a>");
+                                            sb.Append(" <a href='/Modify/GetSonList/" + item.id + "' target='navTab' style='color: red; ' rel='" + item.id + "'>" + item.title + "</a>");
                                         }
                                         else
                                         {
